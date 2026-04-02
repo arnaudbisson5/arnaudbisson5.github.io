@@ -1,3 +1,10 @@
 <script>
-  window.location.href = '/water/' + window.location.hash;
+  // Si on arrive avec un token Supabase → aller au dashboard
+  if (window.location.hash.includes('access_token')) {
+    window.location.href = '/water/' + window.location.hash;
+  } else {
+    // Sinon → page de connexion
+    window.location.href = '/water/login.html';
+  }
 </script>
+``

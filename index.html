@@ -1,4 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
 <script>
+  // ✅ Rediriger SEULEMENT si on arrive avec un token Supabase
+  if (location.hash.includes('access_token')) {
+    location.href = '/water/' + location.hash;
+  } else {
+    location.href = '/water/login.html';
+  }
+</script>
+</body>
+</html><script>
   // Si on arrive avec un token Supabase → aller au dashboard
   if (window.location.hash.includes('access_token')) {
     window.location.href = '/water/' + window.location.hash;
